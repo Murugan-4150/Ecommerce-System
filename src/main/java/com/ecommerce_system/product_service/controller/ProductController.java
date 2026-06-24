@@ -48,8 +48,11 @@ public class ProductController {
         return ResponseEntity.ok(service.delete(productId));
     }
 
-    @DeleteMapping("/delete/{productId}")
-    public String deleteProductById2(@PathVariable Long productId) {
-        return service.delete(productId);
+    @PutMapping("/updateProduct/{productId}")
+    public ResponseEntity<ResponseProductDto> updateProduct(@PathVariable Long productId, @RequestBody RequestProductDto product) {
+        ResponseProductDto response = service.update(productId, product);
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(response);
     }
 }
