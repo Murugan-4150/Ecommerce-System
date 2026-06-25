@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ResponseProductDto {
 
-    Long productId;
+    private Long productId;
 
 }
