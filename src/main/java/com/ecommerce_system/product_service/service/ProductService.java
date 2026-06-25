@@ -54,4 +54,13 @@ public class ProductService {
         repository.deleteById(productId);
         return "Product removed successfully";
     }
+
+    public ResponseProductDto update(Long productId, RequestProductDto product) {
+        Product updateProduct = repository.findById(productId).orElseThrow();
+        updateProduct.setName(product.getName());
+        updateProduct.setPrice(product.getPrice());
+        updateProduct.setStock(product.getStock());
+        repository.save(updateProduct);
+        return new ResponseProductDto(updateProduct.getProductId());
+    }
 }
