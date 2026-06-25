@@ -48,7 +48,7 @@ public class ProductService {
                 .toList();
     }
 
-    //Test conflict 2
+    //Test conflict 2 (commit from github)
 
     public String delete(Long productId) {
         repository.deleteById(productId);
