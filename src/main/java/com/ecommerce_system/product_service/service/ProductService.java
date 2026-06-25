@@ -48,8 +48,6 @@ public class ProductService {
                 .toList();
     }
 
-    //Test conflict 3
-
     public String delete(Long productId) {
         repository.deleteById(productId);
         return "Product removed successfully";
