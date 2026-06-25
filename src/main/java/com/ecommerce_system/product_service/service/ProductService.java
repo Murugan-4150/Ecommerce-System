@@ -23,8 +23,8 @@ public class ProductService {
         request.setName(product.getName());
         request.setPrice(product.getPrice());
         request.setStock(product.getStock());
-        Product Response= repository.save(request);
-        return new ResponseProductDto(Response.getProductId());
+        Product response= repository.save(request);
+        return new ResponseProductDto(response.getProductId());
     }
 
     public RequestProductDto get(Long productId) {
